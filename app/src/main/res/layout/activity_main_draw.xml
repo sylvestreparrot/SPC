@@ -1,0 +1,200 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_main_layout"
+    tools:context=".app.Draw.MainActivityDraw">
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:padding="8sp"/>
+
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/instruction"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/frameLayout">
+
+        <com.adafruit.bluefruit.le.connect.app.Draw.TouchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff" />
+
+    </FrameLayout>
+    <Button
+        android:id="@+id/red"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/blue"
+        android:background="@android:color/holo_blue_light"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/red"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/yellow"
+        android:background="#FFFF00"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/purple" />
+
+    <Button
+        android:id="@+id/green"
+        android:background="#008000"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/black"
+        android:layout_toEndOf="@+id/gray" />
+
+    <Button
+        android:id="@+id/black"
+        android:background="#000000"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/gray" />
+
+    <Button
+        android:id="@+id/gray"
+        android:background="#A9A9A9"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/green"
+        android:layout_toEndOf="@+id/purple"
+        android:layout_below="@+id/yellow" />
+
+    <Button
+        android:id="@+id/purple"
+        android:background="#800080"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/orange"
+        android:layout_toEndOf="@+id/brown" />
+
+    <Button
+        android:id="@+id/orange"
+        android:background="#FFA500"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/brown" />
+
+    <Button
+        android:id="@+id/brown"
+        android:background="#A52A2A"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/gold"
+        android:layout_toEndOf="@+id/argent" />
+
+    <Button
+        android:id="@+id/gold"
+        android:background="#FFD700"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/argent" />
+
+    <Button
+        android:id="@+id/argent"
+        android:background="#C0C0C0"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/khaki"
+        android:layout_toEndOf="@+id/magenta" />
+
+    <Button
+        android:id="@+id/khaki"
+        android:background="#F0E68C"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/royalblue" />
+
+    <Button
+        android:id="@+id/magenta"
+        android:background="#FF00FF"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/turquoise"
+        android:layout_toEndOf="@+id/turquoise"
+        android:layout_below="@+id/khaki" />
+
+    <Button
+        android:id="@+id/royalblue"
+        android:background="#4169E1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/turquoise" />
+
+    <Button
+        android:id="@+id/turquoise"
+        android:background="#40E0D0"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/coral"
+        android:layout_toEndOf="@+id/red" />
+
+    <Button
+        android:id="@+id/coral"
+        android:background="#FF7F50"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/red" />
+
+   <!-- <Button
+        android:id="@+id/erase"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/instruction"
+        android:layout_alignParentTop="true"
+        android:text="Erase"
+        android:textSize="5sp" />
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:text="Open dialog"
+        android:textSize="4sp"
+        android:layout_below="@+id/erase"
+        android:layout_alignEnd="@+id/instruction" />
+
+    <Button
+        android:id="@+id/getFromDatabase"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:text="Get"
+        android:textSize="4sp"
+        android:layout_below="@+id/test"
+        android:layout_toStartOf="@+id/btn_1"
+        android:layout_marginEnd="11dp" />
+
+    <Button
+        android:id="@+id/test"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:text="test"
+        android:textSize="4sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/getFromDatabase" /> -->
+
+
+
+</RelativeLayout>
