@@ -17,7 +17,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:src="@drawable/adaflower"
+        android:src="@drawable/spcpic15"
         tools:ignore="ContentDescription" />
 
     <Button
@@ -81,28 +81,28 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
 
-            <ScrollView
-                android:id="@+id/devicesScrollView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true">
+        </android.support.v4.widget.SwipeRefreshLayout>
 
-                <LinearLayout
+        <ScrollView
+            android:id="@+id/devicesScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.adafruit.bluefruit.le.connect.ui.utils.ExpandableHeightExpandableListView
+                    android:id="@+id/scannedDevicesListView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <com.adafruit.bluefruit.le.connect.ui.utils.ExpandableHeightExpandableListView
-                        android:id="@+id/scannedDevicesListView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#ffffff"
-                        android:childDivider="#00000000"
-                        android:groupIndicator="@null" />
-                </LinearLayout>
-            </ScrollView>
-
-        </android.support.v4.widget.SwipeRefreshLayout>
+                    android:background="#ffffff"
+                    android:childDivider="#00000000"
+                    android:groupIndicator="@null" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </RelativeLayout>
