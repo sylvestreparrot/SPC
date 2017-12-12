@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+import android.os.Handler;
+import android.view.View;
 import android.widget.TextView;
+
 
 import com.adafruit.bluefruit.le.connect.app.MainActivity;
 import com.adafruit.bluefruit.le.connect.R;
@@ -27,6 +30,7 @@ public class SplashActivity extends Activity {
 
         System.out.println("Splash");
 
+
         mProgress = (ProgressBar) findViewById(R.id.pb);
         mProgress.setProgress(0);
         textView=(TextView)findViewById(R.id.textView);
@@ -47,6 +51,7 @@ public class SplashActivity extends Activity {
                         }
                     });
                     mProgress.setProgress(i);
+
                     i++;
                 }else {
                     //start button
@@ -60,6 +65,31 @@ public class SplashActivity extends Activity {
                 }
             }
         }, 0, period);
+
+        blink();
+    }
+    private void blink(){
+        final Handler handler = new Handler();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int timeToBlink = 500;    //in milissegunds
+                try{ Thread.sleep(timeToBlink);}catch (Exception e) {}
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView txt = (TextView) findViewById(R.id.textView2);
+                        if(txt.getVisibility() == View.VISIBLE){
+                            txt.setVisibility(View.INVISIBLE);
+                        }else{
+                            txt.setVisibility(View.VISIBLE);
+                        }
+                        //handler.postDelayed(this, 50);
+                        blink();
+                    }
+                });
+            }
+        }).start();
     }
 
 }

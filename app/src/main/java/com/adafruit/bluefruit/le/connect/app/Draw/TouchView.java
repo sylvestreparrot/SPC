@@ -110,21 +110,6 @@ public class TouchView extends View {
     }
 
     public static void paintFromDatabase(ArrayList<Point> finalOutputString){
-        /*Point pointDataBase;
-
-        finalOutputStringToDraw.clear();
-        System.out.println(finalOutputString.size());
-
-        for(int l = 0; l < finalOutputString.size(); l++){
-            float xDataBase = finalOutputString.get(l).getX();
-            float yDataBase = finalOutputString.get(l).getY();
-            String colorDataBase = finalOutputString.get(l).getColor();
-
-            pointDataBase = new Point(xDataBase,yDataBase,colorDataBase);
-            finalOutputStringToDraw.add(pointDataBase);
-        }
-        drawFromDatabase = true;
-        eraseAll = false;*/
 
         Point pointDataBase;
 
@@ -173,9 +158,9 @@ public class TouchView extends View {
 
         for(int nbPoint = 0; nbPoint< gridX.size(); nbPoint++) {
 
-            for(int i = 0; i< 22; i++){
+            for(int i = 0; i< 11; i++){
                 if((i*50 < gridX.get(nbPoint)) && (gridX.get(nbPoint) < (i+1)*50)){
-                    for(int j = 0; j< 28; j++){
+                    for(int j = 0; j< 21; j++){
                         if((j*50 < gridY.get(nbPoint)) && (gridY.get(nbPoint) < (j+1)*50)){
 
                             StringBuilder sbX = new StringBuilder();
@@ -246,19 +231,19 @@ public class TouchView extends View {
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        for(int i = 0; i< 22; i++){
+        for(int i = 0; i< 11; i++){
             canvas.drawLine(50*i, 0, 50*i,1400, drawPaintGrid);
         }
-        for(int i = 0; i< 28; i++){
+        for(int i = 0; i< 21; i++){
             canvas.drawLine(0,50*i, 1200, 50*i, drawPaintGrid);
         }
 
         if(drawFromDatabase == false){
             for(int nbPoint = 0; nbPoint< gridX.size(); nbPoint++){
                 drawPaint.setColor(Color.parseColor(colorValue.get(nbPoint)));
-                for(float i = 0; i< 22; i++){
+                for(float i = 0; i< 11; i++){
                     if((i*50 < gridX.get(nbPoint)) && (gridX.get(nbPoint) < (i+1)*50)){
-                        for(float j = 0; j< 28; j++){
+                        for(float j = 0; j< 21; j++){
                             if((j*50 < gridY.get(nbPoint)) && (gridY.get(nbPoint) < (j+1)*50)){
                                 canvas.drawRect((i*50)+2,(j*50)+2, ((i+1)*50)-2, ((j+1)*50)-2, drawPaint);
                             }
@@ -272,9 +257,9 @@ public class TouchView extends View {
             for(int nbPoint = 0; nbPoint< finalOutputStringToDraw.size(); nbPoint++){
                 drawPaint.setColor(Color.parseColor(finalOutputStringToDraw.get(nbPoint).getColor()));
 
-                for(float i = 0; i< 22; i++){
+                for(float i = 0; i< 11; i++){
                     if((i*50 < finalOutputStringToDraw.get(nbPoint).getX()) && (finalOutputStringToDraw.get(nbPoint).getX() < (i+1)*50)){
-                        for(float j = 0; j< 28; j++){
+                        for(float j = 0; j< 21; j++){
                             if((j*50 < finalOutputStringToDraw.get(nbPoint).getY()) && (finalOutputStringToDraw.get(nbPoint).getY() < (j+1)*50)){
                                 canvas.drawRect((i*50)+2,(j*50)+2, ((i+1)*50)-2, ((j+1)*50)-2, drawPaint);
                             }
